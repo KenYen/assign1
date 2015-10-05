@@ -1,10 +1,67 @@
 /* please implement your assign1 code in this file. */
+PImage bgOne;
+PImage bgTwo;
+PImage ene;
+PImage FT;
+PImage hp;   
+PImage Ecan;
 
+int bgOneX = 0;
+int bgTwoX = -640;
+int bgSetup =1280;
+int bgOneXCalon = 1280;
+int bgTwoXCalon = 1280;
+
+
+
+int eneX = 0;
+
+int hpRandom = floor(random(50,200));
+int EcanGenerateX = floor(random(0,519));
+int EcanGenerateY = floor(random(52,449));
+
+
+ 
 void setup () {
-  size(640,480) ;  // must use this size.
-  // your code
+  size(640,480) ;// must use this size.
+  // my code
+     bgOne = loadImage("bg1.png");
+     bgTwo = loadImage("bg2.png");
+     
+     ene = loadImage("enemy.png");
+     FT = loadImage("fighter.png");
+     hp = loadImage("hp.png");
+     Ecan = loadImage("treasure.png");
+
+    
 }
 
 void draw() {
-  // your code
+  // my code
+  background(0);
+  
+  image(bgOne, bgOneX, 0);
+  image(bgTwo, bgTwoX, 0);
+   bgTwoX = bgSetup - 640;
+   bgOneX = bgSetup - 1280;
+   bgSetup += 3.5f;
+   bgTwoXCalon = bgTwoX %= 1280;
+   bgOneXCalon = bgOneX %= 1280;
+   bgOneX = bgOneXCalon - 640;
+   bgTwoX = bgTwoXCalon - 640;
+  
+   
+  
+  
+  image(FT, 560, 240);
+  
+  fill(255,0,0);
+  rect(25, 20, hpRandom, 31);
+  image(hp, 20, 20);
+  
+  image(Ecan, EcanGenerateX, EcanGenerateY);
+  
+  image(ene, eneX, 320);
+  eneX += 2;
+  eneX %= 640;
 }
