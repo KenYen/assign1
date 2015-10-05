@@ -12,28 +12,22 @@ int bgSetup =1280;
 int bgOneXCalon = 1280;
 int bgTwoXCalon = 1280;
 
-
-
 int eneX = 0;
 
 int hpRandom = floor(random(50,200));
 int EcanGenerateX = floor(random(0,519));
 int EcanGenerateY = floor(random(52,449));
 
-
- 
 void setup () {
-  size(640,480) ;// must use this size.
+  size(640,480) ;  // must use this size.
   // my code
-     bgOne = loadImage("bg1.png");
-     bgTwo = loadImage("bg2.png");
+     bgOne = loadImage("img//bg1.png");
+     bgTwo = loadImage("img//bg2.png");
      
-     ene = loadImage("enemy.png");
-     FT = loadImage("fighter.png");
-     hp = loadImage("hp.png");
-     Ecan = loadImage("treasure.png");
-
-    
+     ene = loadImage("img//enemy.png");
+     FT = loadImage("img//fighter.png");
+     hp = loadImage("img//hp.png");
+     Ecan = loadImage("img//treasure.png");
 }
 
 void draw() {
@@ -42,13 +36,13 @@ void draw() {
   
   image(bgOne, bgOneX, 0);
   image(bgTwo, bgTwoX, 0);
-   bgTwoX = bgSetup - 640;
-   bgOneX = bgSetup - 1280;
-   bgSetup += 3.5f;
-   bgTwoXCalon = bgTwoX %= 1280;
-   bgOneXCalon = bgOneX %= 1280;
-   bgOneX = bgOneXCalon - 640;
-   bgTwoX = bgTwoXCalon - 640;
+  bgTwoX = bgSetup - 640;
+  bgOneX = bgSetup - 1280;
+  bgSetup += 3.5f;
+  bgTwoXCalon = bgTwoX %= 1280;
+  bgOneXCalon = bgOneX %= 1280;
+  bgOneX = bgOneXCalon - 640;
+  bgTwoX = bgTwoXCalon - 640;
   
    
   
