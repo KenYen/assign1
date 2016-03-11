@@ -1,0 +1,104 @@
+import flash.net.URLRequest;
+
+v1.addEventListener(MouseEvent.MOUSE_DOWN, fv1);
+function fv1(e)
+{
+	dog.visible = true;
+	}
+v2.addEventListener(MouseEvent.MOUSE_DOWN, fv2);
+function fv2(e)
+{
+	dog.visible = false;
+	}
+	
+a1.addEventListener(MouseEvent.MOUSE_DOWN, fa1);
+function fa1(e)
+{
+	if(dog.alpha<=1)
+		dog.alpha += 0.1;
+	 }
+a2.addEventListener(MouseEvent.MOUSE_DOWN, fa2);
+function fa2(e)
+{
+	if(dog.alpha>=0)
+		dog.alpha -= 0.1;
+	 }
+
+sx1.addEventListener(MouseEvent.MOUSE_DOWN, fsx1);
+function fsx1(e)
+	 {
+		if(dog.scaleX >= 0.1) 
+			dog.scaleX -=0.1
+		 }
+	 
+		 
+sx2.addEventListener(MouseEvent.MOUSE_DOWN, fsx2);
+function fsx2(e)
+	 {
+		if(dog.scaleX <= 1.9) 
+			dog.scaleX +=0.1
+		 }
+		 
+sy1.addEventListener(MouseEvent.MOUSE_DOWN, fsy1);
+function fsy1(e)
+	 {
+		if(dog.scaleY >= 0.1) 
+			dog.scaleY -=0.1
+		 }
+	 
+sy2.addEventListener(MouseEvent.MOUSE_DOWN, fsy2);
+function fsy2(e)
+	 {
+		if(dog.scaleY <= 1.9) 
+			dog.scaleY +=0.1
+		 }
+		 
+
+dog.addEventListener(MouseEvent.MOUSE_DOWN, fdog);	 
+function fdog(e)
+		 {
+			dog.scaleX *=-1;
+			 }
+			 
+B1.addEventListener(MouseEvent.MOUSE_DOWN, fB1);	 
+function fB1(e)
+		{
+			var url:String = "http://exhentai.org/"; 	
+			var tourl:URLRequest = new URLRequest(url);
+			navigateToURL(tourl);
+			}
+
+			
+var flag = 1;			
+			
+B2.addEventListener(MouseEvent.MOUSE_DOWN, fB2);	
+function fB2(e)
+		{
+			stage.addEventListener(Event.ENTER_FRAME, loop);
+			}
+B3.addEventListener(MouseEvent.MOUSE_DOWN, fB3);
+function fB3(e)
+		{
+			stage.removeEventListener(Event.ENTER_FRAME, loop);
+			}
+function loop(e)
+{
+		if(flag == 1)
+		{
+			if(dog.scaleX < 2)
+			dog.scaleX += 0.1;
+			
+			else
+				flag = -1;
+			}
+			
+		if(flag == -1)
+		{
+			if(dog.scaleX >= 0.1)
+			dog.scaleX -= 0.1;
+			
+			else
+				flag = 1;
+			}
+	}
+	
